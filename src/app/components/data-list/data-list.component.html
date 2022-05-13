@@ -1,0 +1,16 @@
+<h1>Lista delle attività</h1>
+<div class="d-flex flex-column" *ngIf="dataList.length">
+    <div class="titles d-flex justify-content-evenly" >
+        <span>Nome</span>
+        <span>Tipo</span>
+        <span>Prezzo</span>
+    </div>
+    <div class="data d-flex justify-content-evenly border p-3" *ngFor="let data of dataList">
+        <span>{{this.data.activity}}</span>
+        <span>{{this.data.type}}</span>
+        <span>{{this.data.price}}</span>
+        <button (click)="details()" class="btn btn-primary">Dettagli</button>
+    </div>
+</div>
+<h2 class="fw-bold"  *ngIf="dataList.length === 0">Non ci sono attività</h2>
+<a routerLink="/activity" class="btn btn-secondary ms-2 mt-5">Ritorna alle attività</a>
